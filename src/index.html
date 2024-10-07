@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MP1</title>
+    <link rel="stylesheet" href="./css/main.scss">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Sticky Navbar -->
+    <nav id="navbar">
+        <ul>
+            <li><a href="#mission" class="nav-link">Mission</a></li>
+            <li><a href="#current-hermanos" class="nav-link">Current Hermanos</a></li>
+            <li>
+                <img src="./assets/logo.webp" alt="LUL Logo" class="center-logo">
+            </li>
+            <li><a href="#events" class="nav-link">Events</a></li>
+            <li><a href="#contact" class="nav-link">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <!-- Mission Section -->
+    <section id="mission">
+        <div class="center-vertical">
+            <h1>Mission</h1>
+            <p>La Unidad Latina, Lambda Upsilon Lambda Fraternity, Incorporated primarily seeks to take a leadership role in meeting 
+                the needs of the Latino community through academic achievement, cultural awareness, community service and promotion of the 
+                Latino culture and people.</p>
+        </div>
+    </section>
+
+    <section id="pillars">
+        <div class="video-container">
+            <!-- Full-screen background video -->
+            <iframe class="background-video" src="https://www.youtube.com/embed/3iVJ9zhXsdo?autoplay=1&mute=1&loop=1&playlist=3iVJ9zhXsdo" 
+                frameborder="0" 
+                allow="autoplay; encrypted-media" 
+                allowfullscreen 
+                style="width:100%; height:100%;">
+            </iframe>
+            
+            <div class="dark-overlay"></div>
+            <div class="pillars-content">
+                <h1>Pillars</h1>
+                <div class="pillars-grid">
+                    <h2>Academics</h2>
+                    <h2>Culture</h2>
+                    <h2>Brotherhood</h2>
+                    <h2>Service</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Current Hermanos Section -->
+    <section id="current-hermanos">
+        <h1>Current Hermanos</h1>
+        <div class="carousel">
+            <div class="slider">
+                <!-- Larger images for the brothers in the slider -->
+                <div class="slide"><img src="./assets/IMG_6904.jpg" alt="Brother 1"></div>
+                <div class="slide"><img src="./assets/IMG_6907.jpg" alt="Brother 2"></div>
+                <div class="slide"><img src="./assets/IMG_6908.jpg" alt="Brother 3"></div>
+                <div class="slide"><img src="./assets/IMG_6909.jpg" alt="Brother 4"></div>
+                <div class="slide"><img src="./assets/IMG_6910.jpg" alt="Brother 5"></div>
+                <div class="slide"><img src="./assets/IMG_6911.jpg" alt="Brother 6"></div>
+                <div class="slide"><img src="./assets/IMG_6912.jpg" alt="Brother 7"></div>
+                <div class="slide"><img src="./assets/IMG_6913.jpg" alt="Brother 8"></div>
+                <div class="slide"><img src="./assets/IMG_9227.jpg" alt="Brother 9"></div>
+                <div class="slide"><img src="./assets/IMG_9228.jpg" alt="Brother 10"></div>
+            </div>
+            <!-- Add navigation arrows -->
+            <button class="prev" id="prev">&#10094;</button>
+            <button class="next" id="next">&#10095;</button>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events">
+        <h1>Events</h1>
+        <div class="events-container">
+            <div class="event-column" data-modal="modal1">
+                <h2>Hispanic Heritage Month BBQ</h2>  
+    
+                <div class="event-image">
+                    <img src="./assets/imagejpeg.JPEG" alt="Hispanic Heritage Month BBQ Event">
+                </div>
+            </div>
+    
+            <div class="event-column" data-modal="modal2">
+                <h2>Women's Empowerment Dinner</h2>
+                
+                <div class="event-image">
+                    <img src="./assets/IMG_3615.jpg" alt="Women's Empowerment Dinner Event">
+                </div>
+            </div>
+    
+            <div class="event-column" data-modal="modal3">
+                <h2>H.O.P.E Gala</h2>
+    
+                <div class="event-image">
+                    <img src="./assets/IMG_9247.jpg" alt="H.O.P.E Gala Event">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Hispanic Heritage Month BBQ</h2>
+            <p>
+                We host our annual BBQ at the beginning of Hispanic Heritage Month. 
+                For this event, we invite all LCASO organizations to bring dishes that represent Latin American cuisine. 
+                Attendees will enjoy a variety of foods and live performances from a grupo and a DJ that celebrate the rich Latino culture.
+            </p>
+
+            <div class="event-image">
+                <img src="./assets/imagejpeg.JPEG" alt="Hispanic Heritage Month BBQ Event">
+            </div>
+        </div>
+    </div>
+    
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Women's Empowerment Dinner</h2>
+            <p>
+                The event brought together students and featured insightful presentations by three distinguished UIUC women faculty members, 
+                who discussed the importance of Women's History Month and empowerment.
+            </p>
+
+            <div class="event-image">
+                <img src="./assets/IMG_3615.jpg" alt="Women's Empowerment Dinner Event">
+            </div>
+        </div>
+    </div>
+    
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>H.O.P.E Gala</h2>
+            <p>
+                We host our annual gala to raise funds for the I-HOPE scholarship, awarded annually to four undocumented students. 
+                The evening will feature performances, delicious food, educational activities, and speeches that highlight the undocumented experience.
+            </p>
+
+            <div class="event-image">
+                <img src="./assets/IMG_9247.jpg" alt="H.O.P.E Gala Event">
+            </div>
+        </div>
+    </div>
+    
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h1>Contact Us</h1>
+        <div class="contact-icons">
+            <div class="icon-container">
+                <a href="https://www.instagram.com/lul_uiuc/" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <p>Instagram</p>
+            </div>
+            <div class="icon-container">
+                <a href="https://forms.example.com" target="_blank">
+                    <i class="fas fa-users"></i>
+                </a>
+                <p>Interest Form</p>
+            </div>
+        </div>
+    </section>
+
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
