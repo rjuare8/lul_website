@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
-
 * {
   margin: 0;
   padding: 0;
@@ -22,17 +21,17 @@ nav {
   position: sticky;
   top: 0;
   width: 100%;
-  background-color: #d4a517;
+  background-color: #d4a517; /* Gold color */
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 20px;
   z-index: 1000;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease; /* Add transition for smooth shrinking */
 }
 nav.small {
   padding: 10px;
-  background-color: #a0760c;
+  background-color: #a0760c; /* Optional: Change navbar color when scrolling down */
 }
 nav ul {
   display: flex;
@@ -55,7 +54,7 @@ nav ul a {
   position: relative;
 }
 nav ul a.active {
-  background-color: transparent;
+  background-color: transparent; /* No background */
 }
 nav ul a.active:after {
   content: "";
@@ -64,17 +63,17 @@ nav ul a.active:after {
   height: 2px;
   background-color: #ff0000;
   left: 0;
-  bottom: -5px;
+  bottom: -5px; /* Add space below text */
 }
 nav ul a:hover {
-  color: #a0760c;
+  color: #a0760c; /* Gold color on hover */
 }
 nav .center-logo {
   height: 100px;
   transition: height 0.3s ease;
 }
 nav.small .center-logo {
-  height: 60px;
+  height: 60px; /* Resize logo when navbar shrinks */
 }
 
 /* Centering sections and vertically centering Mission content */
@@ -82,7 +81,7 @@ section {
   padding: 50px;
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* Content stacked in a column */
   justify-content: center;
   align-items: center;
   color: white;
@@ -95,6 +94,7 @@ section p {
   font-size: 2rem;
 }
 
+/* Mission section styles */
 #mission {
   background-color: #d4a517;
   color: #5a2e11;
@@ -108,14 +108,15 @@ section p {
 #mission h1 {
   font-size: 3.2rem;
   margin: 30px 30px;
-  animation: slideInLeft 1.5s ease-out;
+  animation: slideInLeft 1.5s ease-out; /* Slide from the left */
 }
 #mission p {
   font-size: 1.8rem;
   margin: 20px 20px;
-  animation: slideInRight 1.5s ease-out;
+  animation: slideInRight 1.5s ease-out; /* Slide from the right */
 }
 
+/* Keyframes for animations */
 @keyframes slideInLeft {
   from {
     transform: translateX(-100%);
@@ -137,14 +138,31 @@ section p {
   }
 }
 
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  nav ul a {
+    font-size: 14px; /* Smaller text in the navbar */
+  }
+  nav .center-logo {
+    height: 50px; /* Smaller logo */
+  }
+  section h1 {
+    font-size: 2.5rem; /* Smaller section titles */
+  }
+  section p {
+    font-size: 1.5rem; /* Smaller paragraph text */
+  }
+}
+
+/* Styles for the Pillars section */
 #pillars {
   position: relative;
-  height: 130vh;
+  height: 100vh; /* Adjusted for mobile */
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  color: #d4a517;
+  color: #d4a517; /* Gold text */
 }
 #pillars .video-container {
   position: absolute;
@@ -185,9 +203,8 @@ section p {
   padding: 20px;
 }
 #pillars .pillars-content h1 {
-  font-size: 3.5rem;
+  font-size: 3rem;
   margin-bottom: 20px;
-  text-transform: uppercase;
 }
 #pillars .pillars-content .pillars-grid {
   display: flex;
@@ -207,19 +224,35 @@ section p {
 #pillars .pillars-content .pillars-grid h2:hover {
   transform: scale(1.05);
 }
-
 @media (max-width: 768px) {
   #pillars .pillars-grid {
     flex-direction: column;
     gap: 20px;
   }
   #pillars h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
   #pillars h2 {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
   }
 }
+
+/* Style adjustments for smaller devices */
+@media (max-width: 480px) {
+  nav ul a {
+    font-size: 12px; /* Further reduce navbar text size */
+  }
+  nav .center-logo {
+    height: 40px; /* Even smaller logo */
+  }
+  section h1 {
+    font-size: 2rem;
+  }
+  section p {
+    font-size: 1.2rem;
+  }
+}
+
 
 .center-vertical {
   display: flex;
@@ -229,39 +262,43 @@ section p {
 }
 
 #current-hermanos {
-  background-color: #5a2e11;
-  color: #d4a517;
+  background-color: #5a2e11; /* Brown background for Hermanos section */
+  color: #d4a517; /* Gold text for contrast */
 }
 
 #events {
-  background-color: #d4a517;
-  color: #5a2e11;
+  background-color: #d4a517; /* Gold background for Events section */
+  color: #5a2e11; /* Brown text for contrast */
 }
 
+/* Style for each event column */
 .event-column {
-  width: 100%;
-  margin-bottom: 30px;
-  box-sizing: border-box;
-  padding: 15px;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%; /* Ensure columns take full width of the container */
+  margin-bottom: 30px; /* Space below each event column */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  padding: 15px; /* Optional: Add padding inside each column */
+  background-color: #f9f9f9; /* Optional: Add a background color for better contrast */
+  border-radius: 8px; /* Optional: Rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Subtle shadow for depth */
 }
 
+/* Style for the image container within each event column */
 .event-image {
-  text-align: center;
-  margin-top: 15px;
+  text-align: center; /* Centers the image within the container */
+  margin-top: 15px; /* Space above the image */
 }
 
+/* Style for the images themselves */
 .event-image img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 5px;
-  transition: transform 0.3s ease;
+  max-width: 100%; /* Ensures the image scales down with the container */
+  height: auto; /* Maintains the aspect ratio */
+  border-radius: 5px; /* Optional: Rounded corners for images */
+  transition: transform 0.3s ease; /* Optional: Smooth transition for hover effect */
 }
 
+/* Optional: Add a hover effect to images */
 .event-image img:hover {
-  transform: scale(1.05);
+  transform: scale(1.05); /* Slightly enlarges the image on hover */
 }
 
 .event-column h2 {
@@ -276,10 +313,12 @@ section p {
 #contact {
   background: url("../assets/IMG_2064.JPEG") no-repeat center center;
   background-size: cover;
-  background-attachment: fixed;
-  position: relative;
-  color: #d4a517;
+  background-attachment: fixed; /* This will fix the background image */
+  position: relative; /* To ensure the overlay is positioned correctly */
+  color: #d4a517; /* Gold text for contrast */
   z-index: 1;
+  /* Dark overlay */
+  /* Footer with icons */
 }
 #contact::before {
   content: "";
@@ -288,46 +327,47 @@ section p {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
-  z-index: -1;
+  background-color: rgba(0, 0, 0, 0.6); /* Dark effect with 60% opacity */
+  z-index: -1; /* Places the overlay behind the text */
 }
 #contact h1, #contact p {
-  z-index: 1;
+  z-index: 1; /* Ensure the text stays on top of the overlay */
 }
 #contact .contact-icons {
   display: flex;
   justify-content: center;
   padding: 20px;
   gap: 20px;
-  position: relative;
+  position: relative; /* Ensure the icons stay on top */
 }
 #contact .contact-icons .icon-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   font-size: 24px;
-  color: #d4a517;
+  color: #d4a517; /* Gold text */
 }
 #contact .contact-icons .icon-container a {
-  font-size: 3rem;
-  color: #d4a517;
+  font-size: 3rem; /* Make icons bigger */
+  color: #d4a517; /* Icon in gold */
 }
 #contact .contact-icons .icon-container a:hover {
-  color: #a0760c;
+  color: #a0760c; /* Darker gold on hover */
 }
 #contact .contact-icons .icon-container p {
   margin-top: 10px;
-  font-size: 1.2rem;
-  color: #d4a517;
+  font-size: 1.2rem; /* Text size under the icons */
+  color: #d4a517; /* Gold text */
 }
 #contact .contact-icons .icon-container.interest-form a {
   font-size: 3rem;
-  color: #d4a517;
+  color: #d4a517; /* Gold icon for the interest form */
 }
 #contact .contact-icons .icon-container.interest-form a:hover {
-  color: #a0760c;
+  color: #a0760c; /* Darker gold on hover */
 }
 
+/* Carousel/Slider for Current Hermanos */
 .carousel {
   position: relative;
   width: 100%;
@@ -336,7 +376,7 @@ section p {
 
 .slider {
   display: flex;
-  transition: transform 0.8s ease-in-out;
+  transition: transform 0.8s ease-in-out; /* Slower transition for the slides */
 }
 
 .slide {
@@ -350,6 +390,7 @@ section p {
   object-fit: cover;
 }
 
+/* Style for navigation arrows */
 button.prev, button.next {
   position: absolute;
   top: 50%;
@@ -375,6 +416,19 @@ button.prev:hover, button.next:hover {
   background-color: rgba(0, 0, 0, 0.8);
 }
 
+@media (max-width: 768px) {
+  .slide img {
+    width: 300px; /* Make the image smaller for tablets and larger phones */
+  }
+}
+
+@media (max-width: 480px) {
+  .slide img {
+    width: 300px; /* Further reduce the size for smaller phone screens */
+  }
+}
+
+/* Multi-row layout for events */
 .events-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -386,7 +440,7 @@ button.prev:hover, button.next:hover {
   background-color: white;
   padding: 20px;
   border-radius: 5px;
-  color: #5a2e11;
+  color: #5a2e11; /* Brown text inside white event cards */
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 .events-container .event-column:hover {
@@ -394,38 +448,42 @@ button.prev:hover, button.next:hover {
   transition: transform 0.3s ease;
 }
 
+/* The Modal (background) */
 .modal {
-  display: none;
-  position: fixed;
-  z-index: 999;
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 999; /* Sit on top */
   left: 0;
-  top: 50px;
-  width: 100%;
-  height: calc(100% - 50px);
-  background-color: rgba(0, 0, 0, 0.5);
-  overflow: auto;
-  padding-top: 20px;
+  top: 50px; /* Add a top margin to separate from the navbar */
+  width: 100%; /* Full width */
+  height: calc(100% - 50px); /* Adjust height based on the top margin */
+  background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+  overflow: auto; /* Enable scrolling if needed */
+  padding-top: 20px; /* Optional: Add additional padding inside the modal */
 }
 
+/* Modal Content */
 .modal-content {
   background-color: white;
-  margin: 0 auto;
+  margin: 0 auto; /* Centered vertically based on auto margin */
   padding: 20px;
   border-radius: 8px;
-  width: 50%;
-  max-width: 700px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  width: 50%; /* Reduced width for the modal content */
+  max-width: 700px; /* Set a maximum width for larger screens */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
   position: relative;
-  top: 20px;
+  top: 20px; /* Add additional margin from the top inside the modal */
 }
 
+/* Smaller image inside the modal */
 .modal-content img {
-  max-width: 80%;
-  height: auto;
+  max-width: 80%; /* Reduced the image width to 80% of the modal content */
+  height: auto; /* Maintain the aspect ratio */
   display: block;
-  margin: 0 auto;
+  margin: 0 auto; /* Center the image within the modal */
 }
 
+/* Close Button */
 .modal .close {
   position: absolute;
   top: 10px;
@@ -442,3 +500,12 @@ button.prev:hover, button.next:hover {
   text-decoration: none;
   cursor: pointer;
 }
+
+.modal .close:hover,
+.modal .close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=main.scss.map */
