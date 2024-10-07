@@ -116,6 +116,15 @@ section p {
   animation: slideInRight 1.5s ease-out; /* Slide from the right */
 }
 
+@media (max-width: 480px) {
+  #mission h1 {
+    font-size: 3.2rem; /* Further reduce font size for smaller screens */
+  }
+  #mission p {
+    font-size: 1.4rem; /* Further reduce font size for smaller screens */
+  }
+}
+
 /* Keyframes for animations */
 @keyframes slideInLeft {
   from {
@@ -330,6 +339,18 @@ section p {
   background-color: rgba(0, 0, 0, 0.6); /* Dark effect with 60% opacity */
   z-index: -1; /* Places the overlay behind the text */
 }
+
+@media (max-width: 480px) {
+  #contact {
+    background-size: contain; /* Ensure the background image fits within the phone screen */
+    background-position: center; /* Center the image */
+    padding: 30px 10px; /* Add padding to avoid text touching the edges */
+  }
+  #contact h1, #contact p {
+    font-size: 1.5rem; /* Reduce font size for phone display */
+  }
+}
+
 #contact h1, #contact p {
   z-index: 1; /* Ensure the text stays on top of the overlay */
 }
@@ -448,6 +469,26 @@ button.prev:hover, button.next:hover {
   transition: transform 0.3s ease;
 }
 
+@media (max-width: 480px) {
+  .events-container {
+    display: flex;
+    flex-direction: column; /* Stack events vertically */
+    align-items: center; /* Horizontally center the events */
+    width: 100%;
+    padding: 10px;
+  }
+
+  .events-container .event-column {
+    width: 90%; /* Make event column occupy most of the screen width */
+    text-align: center; /* Center text within event columns */
+  }
+
+  .event-column h2 {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+  }
+}
+
 /* The Modal (background) */
 .modal {
   display: none; /* Hidden by default */
@@ -506,6 +547,29 @@ button.prev:hover, button.next:hover {
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
+
+@media (max-width: 480px) {
+  .modal-content {
+    width: 95%; /* Make the modal take almost the full width of the screen */
+    padding: 15px; /* Reduce padding for smaller screens */
+    font-size: 1rem; /* Adjust text size for readability */
+  }
+  .modal-content h2 {
+    font-size: 1.5rem; /* Adjust heading size */
+    margin-bottom: 10px; /* Adjust spacing */
+  }
+  .modal-content p {
+    font-size: 1rem; /* Adjust paragraph text size */
+    line-height: 1.4; /* Adjust line height for better readability */
+    margin-bottom: 10px;
+  }
+  .modal-content img {
+    max-width: 100%; /* Make the image fill the modal's width */
+    height: auto;
+    border-radius: 5px; /* Add rounded corners */
+    margin-top: 10px; /* Add spacing above the image */
+  }
 }
 
 /*# sourceMappingURL=main.scss.map */
