@@ -1,529 +1,466 @@
-// Define color variables based on the uploaded logo
-$gold: #d4a517;  // Gold color extracted from the logo
-$brown: #5a2e11;  // Brown color extracted from the logo
-$light-brown: #8b4513;  // Slightly lighter brown for accents
-$dark-gold: #a0760c;  // Darker gold for active or hovered elements
-$red: #ff0000;  // Red for underline
-
-// Import a custom Google Font
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Poppins', sans-serif;  // Apply custom font
-    margin: 0;
-    padding: 0;
-    scroll-behavior: smooth;
-    text-align: center;
-    background-color: $brown; // Background of the whole body is brown
-    font-weight: 600;  // Make the font slightly thicker globally
-    overflow-x: hidden;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  text-align: center;
+  background-color: #5a2e11;
+  font-weight: 600;
+  overflow-x: hidden;
 }
 
 /* Sticky Navbar */
 nav {
-    position: sticky;
-    top: 0;
-    width: 100%;
-    background-color: $gold; /* Gold color */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    z-index: 1000;
-    transition: all 0.3s ease;  /* Add transition for smooth shrinking */
-    
-    &.small {
-        padding: 10px;
-        background-color: $dark-gold;  /* Optional: Change navbar color when scrolling down */
-    }
-    
-    ul {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        list-style-type: none;
-        width: 100%;
-        max-width: 1200px;
-        
-        li {
-            flex: 1;
-            text-align: center;
-        }
-        
-        a {
-            color: white;
-            text-decoration: none;
-            padding: 10px;
-            font-size: 18px;
-            font-weight: 600;  // Slightly thicker font for links
-            position: relative;
-            
-            &.active {
-                background-color: transparent; /* No background */
-                &:after {
-                    content: "";
-                    position: absolute;
-                    width: 100%;
-                    height: 2px;
-                    background-color: $red;
-                    left: 0;
-                    bottom: -5px; /* Add space below text */
-                }
-            }
-            
-            &:hover {
-                color: $dark-gold; /* Gold color on hover */
-            }
-        }
-    }
-
-    .center-logo {
-        height: 100px;
-        transition: height 0.3s ease;
-    }
-
-    &.small .center-logo {
-        height: 60px;  /* Resize logo when navbar shrinks */
-    }
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: #d4a517; /* Gold color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  z-index: 1000;
+  transition: all 0.3s ease; /* Add transition for smooth shrinking */
 }
-
-
+nav.small {
+  padding: 10px;
+  background-color: #a0760c; /* Optional: Change navbar color when scrolling down */
+}
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style-type: none;
+  width: 100%;
+  max-width: 1200px;
+}
+nav ul li {
+  flex: 1;
+  text-align: center;
+}
+nav ul a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  position: relative;
+}
+nav ul a.active {
+  background-color: transparent; /* No background */
+}
+nav ul a.active:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #ff0000;
+  left: 0;
+  bottom: -5px; /* Add space below text */
+}
+nav ul a:hover {
+  color: #a0760c; /* Gold color on hover */
+}
+nav .center-logo {
+  height: 100px;
+  transition: height 0.3s ease;
+}
+nav.small .center-logo {
+  height: 60px; /* Resize logo when navbar shrinks */
+}
 
 /* Centering sections and vertically centering Mission content */
 section {
-    padding: 50px;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column; /* Content stacked in a column */
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-weight: 600;  // Slightly thicker font in all sections
-    
-    /* Make all section text bigger */
-    h1 {
-        font-size: 3.5rem;  // Increase the font size for section titles
-    }
-
-    p {
-        font-size: 2rem;  // Increase the font size for section paragraphs
-    }
+  padding: 50px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column; /* Content stacked in a column */
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: 600;
+  /* Make all section text bigger */
+}
+section h1 {
+  font-size: 3.5rem;
+}
+section p {
+  font-size: 2rem;
 }
 
 #mission {
-    background-color: $gold;
-    color: $brown;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    font-weight: 600;
-    padding: 60px 20px;
-
-    h1 {
-        font-size: 3.2rem;
-        margin: 30px 30px;
-        animation: slideInLeft 1.5s ease-out; /* Slide from the left */
-    }
-
-    p {
-        font-size: 1.8rem;
-        margin: 20px 20px;
-        animation: slideInRight 1.5s ease-out; /* Slide from the right */
-    }
+  background-color: #d4a517;
+  color: #5a2e11;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-weight: 600;
+  padding: 60px 20px;
+}
+#mission h1 {
+  font-size: 3.2rem;
+  margin: 30px 30px;
+  animation: slideInLeft 1.5s ease-out; /* Slide from the left */
+}
+#mission p {
+  font-size: 1.8rem;
+  margin: 20px 20px;
+  animation: slideInRight 1.5s ease-out; /* Slide from the right */
 }
 
 @keyframes slideInLeft {
-    from {
-        transform: translateX(-100%);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
-
 @keyframes slideInRight {
-    from {
-        transform: translateX(100%);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
-
-
-
 /* Media query for smaller screens */
 #pillars {
-    position: relative;
-    height: 130vh; /* Full viewport height */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: $gold; /* Gold text to contrast with dark overlay */
-
-    .video-container {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-        z-index: 1; /* Ensure the video is behind other elements */
-
-        .background-video {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 100%; /* Ensures the video covers the width */
-            height: 100%; /* Ensures the video covers the height */
-            object-fit: cover; /* Maintain aspect ratio while covering the entire section */
-            transform: translate(-50%, -50%);
-        }
-
-        .dark-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.6); /* Dark effect with 60% opacity */
-            z-index: 2;
-        }
-    }
-
-    .pillars-content {
-        position: relative;
-        z-index: 3;
-        width: 100%;
-        display: flex;
-        flex-direction: column; /* Stack elements vertically */
-        justify-content: center; /* Center vertically */
-        align-items: center; /* Center horizontally */
-        height: 100%; /* Ensure content takes up full height of section */
-        padding: 20px;
-
-        h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-        }
-
-        .pillars-grid {
-            display: flex;
-            justify-content: space-around; /* Space out the pillars horizontally */
-            align-items: center;
-            width: 100%;
-            max-width: 1200px;
-            text-align: center;
-
-            h2 {
-                font-size: 2.5rem;
-                padding: 10px;
-                background-color: rgba(255, 255, 255, 0.1); /* Optional background for better visibility */
-                border-radius: 8px;
-                transition: transform 0.3s ease;
-
-                &:hover {
-                    transform: scale(1.05); /* Slight hover effect */
-                }
-            }
-        }
-    }
-
-    /* Media query for smaller screens */
-    @media (max-width: 768px) {
-        .pillars-grid {
-            flex-direction: column; /* Stack the pillars vertically */
-            gap: 20px; /* Add some spacing between the stacked pillars */
-        }
-
-        h1 {
-            font-size: 2.5rem; /* Reduce the size of the h1 for smaller screens */
-        }
-
-        h2 {
-            font-size: 1.8rem; /* Reduce the size of the h2 for smaller screens */
-        }
-    }
+  position: relative;
+  height: 130vh; /* Full viewport height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #d4a517; /* Gold text to contrast with dark overlay */
+  /* Media query for smaller screens */
+}
+#pillars .video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1; /* Ensure the video is behind other elements */
+}
+#pillars .video-container .background-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%; /* Ensures the video covers the width */
+  height: 100%; /* Ensures the video covers the height */
+  object-fit: cover; /* Maintain aspect ratio while covering the entire section */
+  transform: translate(-50%, -50%);
+}
+#pillars .video-container .dark-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Dark effect with 60% opacity */
+  z-index: 2;
+}
+#pillars .pillars-content {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  justify-content: center; /* Center vertically */
+  align-items: center; /* Center horizontally */
+  height: 100%; /* Ensure content takes up full height of section */
+  padding: 20px;
+}
+#pillars .pillars-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+#pillars .pillars-content .pillars-grid {
+  display: flex;
+  justify-content: space-around; /* Space out the pillars horizontally */
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  text-align: center;
+}
+#pillars .pillars-content .pillars-grid h2 {
+  font-size: 2.5rem;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.1); /* Optional background for better visibility */
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+#pillars .pillars-content .pillars-grid h2:hover {
+  transform: scale(1.05); /* Slight hover effect */
+}
+@media (max-width: 768px) {
+  #pillars .pillars-grid {
+    flex-direction: column; /* Stack the pillars vertically */
+    gap: 20px; /* Add some spacing between the stacked pillars */
+  }
+  #pillars h1 {
+    font-size: 2.5rem; /* Reduce the size of the h1 for smaller screens */
+  }
+  #pillars h2 {
+    font-size: 1.8rem; /* Reduce the size of the h2 for smaller screens */
+  }
 }
 
-
-
-
-
-
-
-
-
-
 .center-vertical {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
 }
 
 #current-hermanos {
-    background-color: $brown; /* Brown background for Hermanos section */
-    color: $gold; /* Gold text for contrast */
+  background-color: #5a2e11; /* Brown background for Hermanos section */
+  color: #d4a517; /* Gold text for contrast */
 }
 
 #events {
-    background-color: $gold; /* Gold background for Events section */
-    color: $brown; /* Brown text for contrast */
+  background-color: #d4a517; /* Gold background for Events section */
+  color: #5a2e11; /* Brown text for contrast */
 }
 
 /* Style for each event column */
 .event-column {
-    width: 100%;             /* Ensure columns take full width of the container */
-    margin-bottom: 30px;     /* Space below each event column */
-    box-sizing: border-box;  /* Include padding and border in the element's total width and height */
-    padding: 15px;           /* Optional: Add padding inside each column */
-    background-color: #f9f9f9; /* Optional: Add a background color for better contrast */
-    border-radius: 8px;      /* Optional: Rounded corners */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Subtle shadow for depth */
+  width: 100%; /* Ensure columns take full width of the container */
+  margin-bottom: 30px; /* Space below each event column */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  padding: 15px; /* Optional: Add padding inside each column */
+  background-color: #f9f9f9; /* Optional: Add a background color for better contrast */
+  border-radius: 8px; /* Optional: Rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Subtle shadow for depth */
 }
 
 /* Style for the image container within each event column */
 .event-image {
-    text-align: center;      /* Centers the image within the container */
-    margin-top: 15px;        /* Space above the image */
+  text-align: center; /* Centers the image within the container */
+  margin-top: 15px; /* Space above the image */
 }
 
 /* Style for the images themselves */
 .event-image img {
-    max-width: 100%;         /* Ensures the image scales down with the container */
-    height: auto;            /* Maintains the aspect ratio */
-    border-radius: 5px;      /* Optional: Rounded corners for images */
-    transition: transform 0.3s ease; /* Optional: Smooth transition for hover effect */
+  max-width: 100%; /* Ensures the image scales down with the container */
+  height: auto; /* Maintains the aspect ratio */
+  border-radius: 5px; /* Optional: Rounded corners for images */
+  transition: transform 0.3s ease; /* Optional: Smooth transition for hover effect */
 }
 
 /* Optional: Add a hover effect to images */
 .event-image img:hover {
-    transform: scale(1.05);  /* Slightly enlarges the image on hover */
+  transform: scale(1.05); /* Slightly enlarges the image on hover */
 }
 
-
 .event-column h2 {
-    font-size: 2.3rem;  // Adjust as needed
-    margin-bottom: 15px;
+  font-size: 2.3rem;
+  margin-bottom: 15px;
 }
 
 .event-column p {
-    font-size: 1.2rem;  // Adjust as needed
+  font-size: 1.2rem;
 }
 
 #contact {
-    background: url('../assets/IMG_2064.JPEG') no-repeat center center;
-    background-size: cover;
-    background-attachment: fixed; /* This will fix the background image */
-    position: relative; /* To ensure the overlay is positioned correctly */
-    color: $gold; /* Gold text for contrast */
-    z-index: 1;
-
-    /* Dark overlay */
-    &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.6); /* Dark effect with 60% opacity */
-        z-index: -1; /* Places the overlay behind the text */
-    }
-
-    h1, p {
-        z-index: 1; /* Ensure the text stays on top of the overlay */
-    }
-
-    /* Footer with icons */
-    .contact-icons {
-        display: flex;
-        justify-content: center;
-        padding: 20px;
-        gap: 20px;
-        position: relative; /* Ensure the icons stay on top */
-
-        .icon-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            font-size: 24px;
-            color: $gold; /* Gold text */
-
-            a {
-                font-size: 3rem; /* Make icons bigger */
-                color: $gold; /* Icon in gold */
-
-                &:hover {
-                    color: $dark-gold; /* Darker gold on hover */
-                }
-            }
-
-            p {
-                margin-top: 10px;
-                font-size: 1.2rem; /* Text size under the icons */
-                color: $gold; /* Gold text */
-            }
-        }
-
-        .icon-container.interest-form a {
-            font-size: 3rem;
-            color: $gold; /* Gold icon for the interest form */
-        }
-
-        .icon-container.interest-form a:hover {
-            color: $dark-gold; /* Darker gold on hover */
-        }
-    }
+  background: url("../assets/IMG_2064.JPEG") no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed; /* This will fix the background image */
+  position: relative; /* To ensure the overlay is positioned correctly */
+  color: #d4a517; /* Gold text for contrast */
+  z-index: 1;
+  /* Dark overlay */
+  /* Footer with icons */
 }
-
-
+#contact::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Dark effect with 60% opacity */
+  z-index: -1; /* Places the overlay behind the text */
+}
+#contact h1, #contact p {
+  z-index: 1; /* Ensure the text stays on top of the overlay */
+}
+#contact .contact-icons {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  gap: 20px;
+  position: relative; /* Ensure the icons stay on top */
+}
+#contact .contact-icons .icon-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 24px;
+  color: #d4a517; /* Gold text */
+}
+#contact .contact-icons .icon-container a {
+  font-size: 3rem; /* Make icons bigger */
+  color: #d4a517; /* Icon in gold */
+}
+#contact .contact-icons .icon-container a:hover {
+  color: #a0760c; /* Darker gold on hover */
+}
+#contact .contact-icons .icon-container p {
+  margin-top: 10px;
+  font-size: 1.2rem; /* Text size under the icons */
+  color: #d4a517; /* Gold text */
+}
+#contact .contact-icons .icon-container.interest-form a {
+  font-size: 3rem;
+  color: #d4a517; /* Gold icon for the interest form */
+}
+#contact .contact-icons .icon-container.interest-form a:hover {
+  color: #a0760c; /* Darker gold on hover */
+}
 
 /* Carousel/Slider for Current Hermanos */
 .carousel {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
 }
 
 .slider {
-    display: flex;
-    transition: transform 0.8s ease-in-out; /* Slower transition for the slides */
+  display: flex;
+  transition: transform 0.8s ease-in-out; /* Slower transition for the slides */
 }
 
 .slide {
-    min-width: 100%;
-    box-sizing: border-box;
+  min-width: 100%;
+  box-sizing: border-box;
 }
 
 .slide img {
-    width: 500px;
-    height: auto;
-    object-fit: cover;
+  width: 500px;
+  height: auto;
+  object-fit: cover;
 }
 
 /* Style for navigation arrows */
 button.prev, button.next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    border: none;
-    color: white;
-    padding: 15px;
-    font-size: 18px;
-    cursor: pointer;
-    z-index: 2;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  padding: 15px;
+  font-size: 18px;
+  cursor: pointer;
+  z-index: 2;
 }
 
 button.prev {
-    left: 0;
+  left: 0;
 }
 
 button.next {
-    right: 0;
+  right: 0;
 }
 
 button.prev:hover, button.next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.8);
 }
-
 
 /* Multi-row layout for events */
 .events-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));  // Responsive columns
-    grid-gap: 20px;  // Space between columns
-    width: 100%;
-    padding: 20px;
-
-    .event-column {
-        background-color: white;
-        padding: 20px;
-        border-radius: 5px;
-        color: $brown; /* Brown text inside white event cards */
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);  // Adding some shadow for better card visibility
-
-        &:hover {
-            transform: scale(1.05);  // Slight hover effect
-            transition: transform 0.3s ease;
-        }
-    }
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 20px;
+  width: 100%;
+  padding: 20px;
+}
+.events-container .event-column {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  color: #5a2e11; /* Brown text inside white event cards */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+.events-container .event-column:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
 }
 
 /* The Modal (background) */
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 999; /* Sit on top */
-    left: 0;
-    top: 50px; /* Add a top margin to separate from the navbar */
-    width: 100%; /* Full width */
-    height: calc(100% - 50px); /* Adjust height based on the top margin */
-    background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
-    overflow: auto; /* Enable scrolling if needed */
-    padding-top: 20px; /* Optional: Add additional padding inside the modal */
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 999; /* Sit on top */
+  left: 0;
+  top: 50px; /* Add a top margin to separate from the navbar */
+  width: 100%; /* Full width */
+  height: calc(100% - 50px); /* Adjust height based on the top margin */
+  background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+  overflow: auto; /* Enable scrolling if needed */
+  padding-top: 20px; /* Optional: Add additional padding inside the modal */
 }
 
 /* Modal Content */
 .modal-content {
-    background-color: white;
-    margin: 0 auto; /* Centered vertically based on auto margin */
-    padding: 20px;
-    border-radius: 8px;
-    width: 50%; /* Reduced width for the modal content */
-    max-width: 700px; /* Set a maximum width for larger screens */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    position: relative;
-    top: 20px; /* Add additional margin from the top inside the modal */
+  background-color: white;
+  margin: 0 auto; /* Centered vertically based on auto margin */
+  padding: 20px;
+  border-radius: 8px;
+  width: 50%; /* Reduced width for the modal content */
+  max-width: 700px; /* Set a maximum width for larger screens */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  position: relative;
+  top: 20px; /* Add additional margin from the top inside the modal */
 }
-
 
 /* Smaller image inside the modal */
 .modal-content img {
-    max-width: 80%; /* Reduced the image width to 80% of the modal content */
-    height: auto; /* Maintain the aspect ratio */
-    display: block;
-    margin: 0 auto; /* Center the image within the modal */
+  max-width: 80%; /* Reduced the image width to 80% of the modal content */
+  height: auto; /* Maintain the aspect ratio */
+  display: block;
+  margin: 0 auto; /* Center the image within the modal */
 }
 
 /* Close Button */
 .modal .close {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    color: #aaa;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 .modal .close:hover,
 .modal .close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
 }
-
 
 .modal .close:hover,
 .modal .close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
 }
 
+/*# sourceMappingURL=main.scss.map */
