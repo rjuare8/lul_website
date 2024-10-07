@@ -1,31 +1,26 @@
-name: Deploy to GitHub Pages
+image: node:latest
 
-on:
-  push:
-    branches:
-      - main  # Change to your default branch if necessary
+variables:
+  PUBLIC_URL: /lul_website
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
+cache:
+  paths:
+  - node_modules
 
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+stages:
+  - deploy
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '16'  # Use the Node.js version compatible with your project
+pages:
+  stage: deploy
 
-      - name: Install dependencies
-        run: npm install
+  script:
+    - npm install
+    - npm run build
+    - mv dist public
 
-      - name: Build project
-        run: npm run build
+  artifacts:
+    paths:
+    - public
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist  # Adjust to your build output directory if different
+  only:
+    - master
