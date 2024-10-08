@@ -340,11 +340,20 @@ section p {
   z-index: -1; /* Places the overlay behind the text */
 }
 
+@media (max-width: 768px) {
+  #contact {
+    background-size: contain; /* Adjust background size for smaller screens */
+    background-attachment: scroll; /* Change to scroll so the image moves with the content */
+    padding: 30px 10px; /* Add padding to avoid text touching the edges */
+  }
+}
+
 @media (max-width: 480px) {
   #contact {
-    background-size: contain; /* Ensure the background image fits within the phone screen */
-    background-position: center; /* Center the image */
-    padding: 30px 10px; /* Add padding to avoid text touching the edges */
+    background-size: contain; /* Ensure the background image fits within the screen */
+    background-position: center;
+    padding: 30px 10px;
+    background-attachment: scroll; /* Change to scroll for mobile */
   }
   #contact h1, #contact p {
     font-size: 1.5rem; /* Reduce font size for phone display */
